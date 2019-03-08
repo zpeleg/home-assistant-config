@@ -1,0 +1,59 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: 32.0838
+  longitude: 34.8138
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 0
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Asia/Jerusalem
+  # Customization file
+  customize: !include customize.yaml
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Show the introduction message on startup.
+introduction:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Sensors
+sensor:
+  # Weather prediction
+  - platform: yr
+
+# Text to speech
+tts:
+  - platform: google
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+discovery:
+  ignore:
+    - yeelight
+light:
+  - platform: group
+    name: Living Room
+    entities:
+      - light.living_room_1
+      - light.living_room_2
+      - light.living_room_3
+  - platform: yeelight
+    devices:
+      192.168.1.105:
+        name: kitchen
+      192.168.1.106:
+        name: living_room_1
+      192.168.1.107:
+        name: living_room_2
+      192.168.1.108:
+        name: living_room_3
+      192.168.1.111:
+        name: bedroom
