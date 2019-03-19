@@ -17,7 +17,7 @@ homeassistant:
 default_config:
 
 # Show the introduction message on startup.
-introduction:
+#introduction:
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 # http:
@@ -58,3 +58,16 @@ light:
         name: living_room_3
       192.168.1.73:
         name: bedroom
+switch:
+  # Living Room
+  - platform: broadlink
+    host: 192.168.1.75
+    mac: 34:EA:34:E3:C9:CD
+    friendly_name: Living Room Switch
+    type: rm_mini
+  # Bedroom
+  - platform: broadlink
+    host: 192.168.1.76
+    mac: 34:EA:34:E3:CA:D7
+    friendly_name: Bedroom Switch
+    type: rm_mini
