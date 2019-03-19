@@ -71,3 +71,18 @@ switch:
     mac: 34:EA:34:E3:CA:D7
     friendly_name: Bedroom Switch
     type: rm_mini
+smartir:
+
+media_player:
+  - platform: smartir
+    name: TV
+    unique_id: living_room_tv
+    device_code: 1040
+    controller_send_service: switch.broadlink_send_packet_192_168_1_75
+
+#climate:
+#  - platform: smartir
+#    name: Living Room AC
+#    unique_id: living_room_ac
+#    device_code: 1620
+#    controller_send_service: switch.broadlink_send_packet_192_168_1_75
