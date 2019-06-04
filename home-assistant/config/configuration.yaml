@@ -58,6 +58,8 @@ light:
         name: living_room_3
       192.168.1.73:
         name: bedroom
+      192.168.1.77:
+        name: ambient
 switch:
   # Living Room
   - platform: broadlink
