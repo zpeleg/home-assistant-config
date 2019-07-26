@@ -46,21 +46,21 @@ light:
       - light.living_room_1
       - light.living_room_2
       - light.living_room_3
-  - platform: yeelight
-    devices:
-      192.168.1.74:
-        name: kitchen
-        model: ceiling1
-      192.168.1.70:
-        name: living_room_1
-      192.168.1.71:
-        name: living_room_2
-      192.168.1.72:
-        name: living_room_3
-      192.168.1.73:
-        name: bedroom
-      192.168.1.77:
-        name: ambient
+yeelight:
+  devices:
+    192.168.1.74:
+      name: kitchen
+      model: ceiling1
+    192.168.1.70:
+      name: living_room_1
+    192.168.1.71:
+      name: living_room_2
+    192.168.1.72:
+      name: living_room_3
+    192.168.1.73:
+      name: bedroom
+    192.168.1.77:
+      name: ambient
 switch:
   # Living Room
   - platform: broadlink
