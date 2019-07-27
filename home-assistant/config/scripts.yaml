@@ -1,0 +1,36 @@
+night_mode: 
+  alias: "Night Mode"
+  sequence:
+    - service: yeelight.set_mode
+      entity_id: light.kitchen
+      data:
+        mode: moonlight
+    - service: light.turn_on
+      entity_id: 
+        - light.kitchen
+        - light.living_room_1
+        - light.living_room_2
+        - light.living_room_3
+        - light.bedroom
+        - light.ambient
+      data:
+        brightness: 1
+        kelvin: 1000
+white_mode: 
+  alias: "White Mode"
+  sequence:
+    - service: yeelight.set_mode
+      entity_id: light.kitchen
+      data:
+        mode: normal
+    - service: light.turn_on
+      entity_id: 
+        - light.kitchen
+        - light.living_room_1
+        - light.living_room_2
+        - light.living_room_3
+        - light.bedroom
+        - light.ambient
+      data:
+        brightness: 255
+        kelvin: 6500
